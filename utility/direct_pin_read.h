@@ -2,7 +2,7 @@
 #define direct_pin_read_h_
 
 #if defined(__AVR__)
-
+#define IO_REG_TYPE			uint8_t
 #define PIN_TO_BASEREG(pin)             (portInputRegister(digitalPinToPort(pin)))
 #define PIN_TO_BITMASK(pin)             (digitalPinToBitMask(pin))
 #define DIRECT_PIN_READ(base, mask)     (((*(base)) & (mask)) ? 1 : 0)
